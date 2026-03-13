@@ -1,0 +1,91 @@
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+
+const Footer = () => {
+  const scrollTo = (id: string) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <footer className="bg-primary text-primary-foreground py-16">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <h3 className="font-serif text-2xl font-bold mb-2">BMN</h3>
+            <p className="font-sans text-xs tracking-[0.3em] uppercase text-primary-foreground/60 mb-4">
+              Brasil Madeiras Nobre
+            </p>
+            <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed">
+              Madeiras nobres brasileiras premium com qualidade certificada, transformando espaços com elegância e durabilidade.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-sans text-xs uppercase tracking-widest text-primary-foreground/50 mb-4 font-semibold">
+              Links Rápidos
+            </h4>
+            <nav className="space-y-2">
+              {[
+                { label: "Início", href: "#inicio" },
+                { label: "Sobre Nós", href: "#sobre" },
+                { label: "Produtos", href: "#produtos" },
+                { label: "Segmentações", href: "#segmentacoes" },
+                { label: "Inspiração", href: "#inspiracao" },
+                { label: "Contato", href: "#contato" },
+              ].map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="block font-sans text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-sans text-xs uppercase tracking-widest text-primary-foreground/50 mb-4 font-semibold">
+              Contato
+            </h4>
+            <div className="space-y-3">
+              {[
+                { icon: MapPin, text: "Curitiba, Paraná – Brasil" },
+                { icon: Phone, text: "(41) 99999-9999" },
+                { icon: Mail, text: "contato@bmnmadeiras.com.br" },
+                { icon: Instagram, text: "@bmn.madeiras" },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-3">
+                  <item.icon className="w-4 h-4 text-accent flex-shrink-0" />
+                  <span className="font-sans text-sm text-primary-foreground/70">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-sans text-xs text-primary-foreground/50">
+            © 2026 BMN Brasil Madeiras Nobre. Todos os direitos reservados.
+          </p>
+          <div className="flex gap-4">
+            <a
+              href="https://instagram.com/bmn.madeiras"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
