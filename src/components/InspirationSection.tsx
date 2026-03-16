@@ -29,7 +29,7 @@ const InspirationSection = () => {
           >
             <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Transformações que <span className="text-accent italic">Inspiram</span>
+              Transformações que <span className="text-accent italic">Encantam</span>
             </h2>
             <p className="text-muted-foreground font-sans max-w-2xl mx-auto">
               Projetos reais que mostram o poder da madeira nobre em transformar ambientes.
