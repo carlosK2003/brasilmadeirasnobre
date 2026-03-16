@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Interior luxuoso com piso de madeira nobre brasileira"
+          alt="Hero BMN – Deck de madeira nobre em ambiente luxuoso brasileiro à beira do lago"
           className="w-full h-full object-cover"
           loading="eager"
         />
