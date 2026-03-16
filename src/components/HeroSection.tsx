@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import logoBmn from "@/assets/logo-bmn.png";
 
 const HeroSection = () => {
   const scrollTo = (id: string) => {
@@ -25,22 +26,14 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          className="flex flex-col items-center"
         >
-          {/* Gold line */}
-          <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
-
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
-            BMN – Brasil{" "}
-            <span className="italic text-gold-light">Madeiras Nobre</span>
-          </h1>
-
-          <p className="font-serif text-lg md:text-xl text-cream/90 mb-4 italic max-w-3xl mx-auto leading-relaxed">
-            "A madeira tem o poder de transformar espaços, trazendo aconchego, harmonia e um toque de natureza para dentro de casa."
-          </p>
-
-          <p className="font-sans text-sm md:text-base text-cream/70 mb-10 max-w-2xl mx-auto tracking-wide">
-            Qualidade premium, durabilidade e acabamento impecável em madeiras nobres certificadas.
-          </p>
+          {/* Logo */}
+          <img
+            src={logoBmn}
+            alt="BMN – Brasil Madeiras Nobre logo"
+            className="w-64 md:w-80 lg:w-96 mb-12 drop-shadow-2xl"
+          />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
