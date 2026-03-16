@@ -32,14 +32,14 @@ const HeroSection = () => {
           <img
             src={logoBmn}
             alt="BMN – Brasil Madeiras Nobre logo"
-            className="w-64 md:w-80 lg:w-96 mb-6 drop-shadow-2xl -mt-12"
+            className="w-64 md:w-80 lg:w-96 mb-6 drop-shadow-2xl -mt-24"
           />
 
           <p className="text-cream/90 font-sans text-base md:text-lg tracking-wide mb-12 max-w-xl">
             Explore nossa variedade para um toque de classe em cada ambiente.
           </p>
 
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-12">
             <button
               onClick={() => scrollTo("#produtos")}
               className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"

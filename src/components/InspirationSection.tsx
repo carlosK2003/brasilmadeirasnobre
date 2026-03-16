@@ -6,7 +6,7 @@ import img3 from "@/assets/inspiration-3.jpg";
 import img4 from "@/assets/inspiration-4.jpg";
 
 const images = [
-  { src: img1, alt: "Sala de estar com piso de madeira nobre", label: "Sala de Estar" },
+  { src: img1, alt: "Área comercial com piso e forro de madeira nobre BMN", label: "Área Comercial" },
   { src: img2, alt: "Quarto com piso e painel de madeira", label: "Quarto" },
   { src: img3, alt: "Terraço com deck de madeira ao pôr do sol", label: "Terraço" },
   { src: img4, alt: "Cozinha moderna com piso de madeira", label: "Cozinha" },
