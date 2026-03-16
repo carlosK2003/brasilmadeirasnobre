@@ -39,7 +39,7 @@ const HeroSection = () => {
             Explore nossa variedade para um toque de classe em cada ambiente.
           </p>
 
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-12">
             <button
               onClick={() => scrollTo("#produtos")}
               className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"
