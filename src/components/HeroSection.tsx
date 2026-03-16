@@ -32,7 +32,7 @@ const HeroSection = () => {
           <img
             src={logoBmn}
             alt="BMN – Brasil Madeiras Nobre logo"
-            className="w-64 md:w-80 lg:w-96 mb-6 drop-shadow-2xl -mt-12"
+            className="w-64 md:w-80 lg:w-96 mb-6 drop-shadow-2xl -mt-24"
           />
 
           <p className="text-cream/90 font-sans text-base md:text-lg tracking-wide mb-12 max-w-xl">
