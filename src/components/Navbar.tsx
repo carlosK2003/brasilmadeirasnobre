@@ -83,7 +83,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md shadow-xl border-t border-border"
+            className="lg:hidden absolute top-full left-0 right-0 bg-background/80 backdrop-blur-xl shadow-xl border-t border-border"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
