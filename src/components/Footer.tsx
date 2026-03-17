@@ -16,7 +16,7 @@ const Footer = () => {
               Brasil Madeiras Nobre
             </p>
             <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed">
-              Madeiras nobres brasileiras premium com qualidade certificada, transformando espaços com elegância e durabilidade.
+              Madeiras nobres nacionais e importadas premium com qualidade certificada, transformando espaços com elegância e durabilidade.
             </p>
           </div>
 
