@@ -53,10 +53,10 @@ const AboutSection = () => {
           className="max-w-4xl mx-auto"
         >
           <p className="text-muted-foreground font-sans leading-relaxed mb-6 text-base">
-            A BMN – Brasil Madeiras Nobre nasceu da paixão pelas madeiras nobres nacionais e importadas e do compromisso com a excelência. Sediada em Curitiba-PR, somos especialistas em selecionar, beneficiar e entregar as mais belas espécies de madeiras do Brasil.
+            A BMN – Brasil Madeiras Nobre nasce da paixão pela nobreza da madeira e do compromisso em transformar a matéria-prima da natureza em expressão de elegância e sofisticação. Com sede em Curitiba - PR, dedicamo-nos à seleção criteriosa, ao beneficiamento refinado e à entrega das mais distintas espécies, revelando em cada peça a beleza autêntica do Brasil e do mundo.
           </p>
           <p className="text-muted-foreground font-sans leading-relaxed mb-10 text-base">
-            Madeiras nobres nacionais e importadas selecionadas com rigor, oferecendo beleza natural e durabilidade incomparável.
+            Trabalhamos com madeiras nobres nacionais e importadas, escolhidas com rigor para oferecer não apenas estética marcante, mas também durabilidade excepcional — uma harmonia perfeita entre a força da natureza e o requinte atemporal.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">

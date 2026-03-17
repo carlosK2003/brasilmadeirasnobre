@@ -18,7 +18,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contato" className="py-24 lg:py-32 bg-background" ref={ref}>
+    <section id="contato" className="py-14 lg:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

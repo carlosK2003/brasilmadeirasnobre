@@ -36,10 +36,10 @@ const HeroSection = () => {
           />
 
           <p className="text-cream/90 font-sans text-base md:text-lg tracking-wide mb-12 max-w-xl">
-            Explore nossa variedade para um toque de classe em cada ambiente.
+            Explore nossa variedade, onde a essência da natureza se transforma em sofisticação e elegância no seu ambiente.
           </p>
 
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-24">
             <button
               onClick={() => scrollTo("#produtos")}
               className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"
