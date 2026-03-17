@@ -44,7 +44,7 @@ const HeroSection = () => {
               onClick={() => scrollTo("#produtos")}
               className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"
             >
-              Explorar Produtos
+              EXPLORAR CATÁLOGO
             </button>
           </div>
         </motion.div>
