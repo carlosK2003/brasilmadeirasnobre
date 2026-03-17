@@ -52,7 +52,7 @@ const ProductsSection = () => {
             Nossos <span className="text-accent italic">Produtos</span>
           </h2>
           <p className="text-muted-foreground font-sans max-w-2xl mx-auto">
-            Madeiras nobres brasileiras selecionadas com rigor, oferecendo beleza natural e durabilidade incomparável.
+            Madeiras nobres nacionais e importadas selecionadas com rigor, oferecendo beleza natural e durabilidade incomparável.
           </p>
         </motion.div>
 
