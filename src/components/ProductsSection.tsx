@@ -27,16 +27,16 @@ const products = [
     alt: "Forro de madeira nobre em ambiente moderno",
   },
   {
-    title: "Madeiras S4S",
-    description: "Peças aplainadas nos quatro lados, prontas para projetos sob medida e marcenaria.",
-    image: s4sImg,
-    alt: "Madeira S4S aplainada premium",
-  },
-  {
     title: "Escadas",
     description: "Escadas em madeiras nobres com acabamento impecável, unindo segurança, durabilidade e elegância aos seus ambientes.",
     image: escadasImg,
     alt: "Escada de madeira nobre com design moderno",
+  },
+  {
+    title: "Madeiras S4S",
+    description: "Peças aplainadas nos quatro lados, prontas para projetos sob medida e marcenaria.",
+    image: s4sImg,
+    alt: "Madeira S4S aplainada premium",
   },
 ];
 
@@ -45,7 +45,7 @@ const ProductsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="produtos" className="py-24 lg:py-32 bg-background" ref={ref}>
+    <section id="produtos" className="py-14 lg:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <motion.div
@@ -59,7 +59,7 @@ const ProductsSection = () => {
             Nossos <span className="text-accent italic">Produtos</span>
           </h2>
           <p className="text-muted-foreground font-sans max-w-2xl mx-auto">
-            Madeiras nobres nacionais e importadas selecionadas com rigor, oferecendo beleza natural e durabilidade incomparável.
+            Madeiras selecionadas para proporcionar estética autêntica e resistência excepcional, valorizando cada projeto com personalidade e essência.
           </p>
         </motion.div>
 
