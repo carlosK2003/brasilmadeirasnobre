@@ -66,6 +66,14 @@ const InspirationSection = () => {
               </motion.div>
             ))}
           </div>
+
+          <div className="flex justify-center mt-12">
+            <button
+              className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"
+            >
+              CONHECER INSPIRAÇÕES
+            </button>
+          </div>
         </div>
       </section>
 
