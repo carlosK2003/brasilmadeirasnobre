@@ -5,6 +5,7 @@ import pisosImg from "@/assets/product-pisos.jpg";
 import decksImg from "@/assets/product-decks.jpg";
 import forrosImg from "@/assets/product-forros.jpg";
 import s4sImg from "@/assets/product-s4s.jpg";
+import escadasImg from "@/assets/product-escadas.jpg";
 
 const products = [
   {
@@ -30,6 +31,12 @@ const products = [
     description: "Peças aplainadas nos quatro lados, prontas para projetos sob medida e marcenaria.",
     image: s4sImg,
     alt: "Madeira S4S aplainada premium",
+  },
+  {
+    title: "Escadas",
+    description: "Escadas em madeiras nobres com acabamento impecável, unindo segurança, durabilidade e elegância aos seus ambientes.",
+    image: escadasImg,
+    alt: "Escada de madeira nobre com design moderno",
   },
 ];
 
