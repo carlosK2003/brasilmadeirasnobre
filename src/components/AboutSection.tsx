@@ -15,7 +15,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="sobre" className="py-24 lg:py-32 bg-card" ref={ref}>
+    <section id="sobre" className="py-14 lg:py-20 bg-card" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Title */}
         <motion.div
