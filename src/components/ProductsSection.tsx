@@ -45,7 +45,7 @@ const ProductsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="produtos" className="py-24 lg:py-32 bg-background" ref={ref}>
+    <section id="produtos" className="py-14 lg:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <motion.div
