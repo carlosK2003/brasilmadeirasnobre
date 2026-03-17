@@ -32,6 +32,12 @@ const products = [
     image: s4sImg,
     alt: "Madeira S4S aplainada premium",
   },
+  {
+    title: "Escadas",
+    description: "Escadas em madeiras nobres com acabamento impecável, unindo segurança, durabilidade e elegância aos seus ambientes.",
+    image: escadasImg,
+    alt: "Escada de madeira nobre com design moderno",
+  },
 ];
 
 const ProductsSection = () => {
