@@ -16,7 +16,7 @@ const Footer = () => {
               Brasil Madeiras Nobre
             </p>
             <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed">
-              Madeiras nobres brasileiras premium com qualidade certificada, transformando espaços com elegância e durabilidade.
+              Madeiras nobres nacionais e importadas premium com qualidade certificada, transformando espaços com elegância e durabilidade.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               {[
-                { icon: MapPin, text: "Curitiba, Paraná – Brasil" },
+                { icon: MapPin, text: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brazil" },
                 { icon: Phone, text: "(41) 99999-9999" },
                 { icon: Mail, text: "contato@bmnmadeiras.com.br" },
                 { icon: Instagram, text: "@bmn.madeiras" },
