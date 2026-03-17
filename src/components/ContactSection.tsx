@@ -122,7 +122,7 @@ const ContactSection = () => {
           >
             <div className="space-y-6">
               {[
-                { icon: MapPin, label: "Endereço", value: "Curitiba, Paraná – Brasil" },
+                { icon: MapPin, label: "Endereço", value: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brazil" },
                 { icon: Phone, label: "WhatsApp", value: "(41) 99999-9999" },
                 { icon: Mail, label: "E-mail", value: "contato@bmnmadeiras.com.br" },
                 { icon: Instagram, label: "Instagram", value: "@bmn.madeiras" },
