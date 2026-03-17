@@ -5,6 +5,7 @@ import pisosImg from "@/assets/product-pisos.jpg";
 import decksImg from "@/assets/product-decks.jpg";
 import forrosImg from "@/assets/product-forros.jpg";
 import s4sImg from "@/assets/product-s4s.jpg";
+import escadasImg from "@/assets/product-escadas.jpg";
 
 const products = [
   {
