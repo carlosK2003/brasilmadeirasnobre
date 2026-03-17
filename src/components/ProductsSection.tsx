@@ -9,7 +9,7 @@ import s4sImg from "@/assets/product-s4s.jpg";
 const products = [
   {
     title: "Pisos & Assoalhos",
-    description: "Pisos maciços e engenheirados em madeiras nobres brasileiras para ambientes sofisticados.",
+    description: "Pisos maciços e engenheirados em madeiras nobres nacionais e importadas para ambientes sofisticados.",
     image: pisosImg,
     alt: "Piso de madeira nobre brasileira",
   },

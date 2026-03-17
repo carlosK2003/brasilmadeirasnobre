@@ -142,7 +142,7 @@ const ContactSection = () => {
             {/* Map */}
             <div className="rounded-sm overflow-hidden border border-border h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230417.42!2d-49.38!3d-25.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce35b0a4b3e3f%3A0xab69e5c0e3e3e3e3!2sCuritiba%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.5!2d-49.2777!3d-25.4750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4f2a0b1c3d5%3A0x1234567890abcdef!2sR.+Frederico+Maurer%2C+421+-+Hauer%2C+Curitiba+-+PR%2C+81630-020!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
