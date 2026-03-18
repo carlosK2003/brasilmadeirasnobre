@@ -67,32 +67,37 @@ const ProductsSection = () => {
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {products.map((product, i) => (
-            <motion.div
-              key={product.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group relative overflow-hidden rounded-sm cursor-pointer"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-wood-dark/90 via-wood-dark/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h3 className="font-serif text-2xl font-bold text-cream mb-2">{product.title}</h3>
-                <p className="font-sans text-sm text-cream/80 mb-4 max-w-sm">{product.description}</p>
-                <span className="inline-flex items-center gap-2 text-accent text-sm font-sans font-medium uppercase tracking-wider group-hover:gap-3 transition-all duration-300">
-                  Ver detalhes <ArrowRight className="w-4 h-4" />
-                </span>
-              </div>
-            </motion.div>
-          ))}
+          {products.map((product, i) => {
+            const Wrapper = product.link ? Link : 'div';
+            const wrapperProps = product.link ? { to: product.link } : {};
+            return (
+              <motion.div
+                key={product.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+              >
+                <Wrapper {...wrapperProps as any} className="group relative overflow-hidden rounded-sm cursor-pointer block">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-wood-dark/90 via-wood-dark/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="font-serif text-2xl font-bold text-cream mb-2">{product.title}</h3>
+                    <p className="font-sans text-sm text-cream/80 mb-4 max-w-sm">{product.description}</p>
+                    <span className="inline-flex items-center gap-2 text-accent text-sm font-sans font-medium uppercase tracking-wider group-hover:gap-3 transition-all duration-300">
+                      Ver detalhes <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </Wrapper>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
