@@ -14,6 +14,7 @@ const products = [
     description: "Pisos maciços e engenheirados em madeiras nobres nacionais e importadas para ambientes sofisticados.",
     image: pisosImg,
     alt: "Piso de madeira nobre brasileira",
+    link: "/pisos-e-assoalhos",
   },
   {
     title: "Decks",
