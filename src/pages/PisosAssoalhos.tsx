@@ -1,21 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Pisos Maciços
-import macicoIpe from "@/assets/piso-macico-ipe.jpg";
-import macicoJatoba from "@/assets/piso-macico-jatoba.jpg";
-import macicoCumaru from "@/assets/piso-macico-cumaru.jpg";
-import macicoTauari from "@/assets/piso-macico-tauari.jpg";
+import macicoCumaruChampagne from "@/assets/piso-macico-cumaru-champagne.jpg";
+import macicoCumaruFerro from "@/assets/piso-macico-cumaru-ferro.jpg";
+import macicoGarapeira from "@/assets/piso-macico-garapeira.jpg";
 import macicoPeroba from "@/assets/piso-macico-peroba.jpg";
+import macicoSucupira from "@/assets/piso-macico-sucupira.jpg";
+import macicoTauari from "@/assets/piso-macico-tauari.jpg";
 
 // Pisos Engenheirados
-import engIpe from "@/assets/piso-eng-ipe.jpg";
-import engJatoba from "@/assets/piso-eng-jatoba.jpg";
-import engCumaru from "@/assets/piso-eng-cumaru.jpg";
-import engCarvalho from "@/assets/piso-eng-carvalho.jpg";
-import engTauari from "@/assets/piso-eng-tauari.jpg";
+import engCarvalhoPrime from "@/assets/piso-eng-carvalho-prime.jpg";
+import engTauariPrime from "@/assets/piso-eng-tauari-prime.jpg";
 
 // Projetos
 import projeto1 from "@/assets/projeto-1.jpg";
@@ -28,24 +29,22 @@ import projeto7 from "@/assets/projeto-7.jpg";
 import projeto8 from "@/assets/projeto-8.jpg";
 
 const pisosMacicos = [
-  { name: "Ipê", image: macicoIpe, desc: "Alta durabilidade, cor castanho-escuro, resistência natural a umidade e insetos. Ideal para ambientes internos e externos." },
-  { name: "Jatobá", image: macicoJatoba, desc: "Tom avermelhado marcante, extrema resistência mecânica e beleza singular. Perfeito para ambientes de alto tráfego." },
-  { name: "Cumaru", image: macicoCumaru, desc: "Tonalidade dourada com veios elegantes, altíssima densidade e resistência. Uma das madeiras mais nobres do Brasil." },
-  { name: "Tauari", image: macicoTauari, desc: "Tom claro e uniforme, excelente estabilidade dimensional. Ideal para ambientes modernos e minimalistas." },
+  { name: "Cumaru Champagne", image: macicoCumaruChampagne, desc: "Tonalidade dourada clara com veios suaves e elegantes. Resistência excepcional e beleza luminosa para ambientes sofisticados." },
+  { name: "Cumaru Ferro", image: macicoCumaruFerro, desc: "Tom escuro e profundo com densidade superior. Uma das madeiras mais resistentes do mundo, ideal para alto tráfego." },
+  { name: "Garapeira", image: macicoGarapeira, desc: "Coloração amarelo-dourada uniforme com excelente durabilidade natural. Versátil e elegante para qualquer ambiente." },
   { name: "Peroba", image: macicoPeroba, desc: "Coloração quente e variada, fibras entrelaçadas únicas. Tradição e charme em cada tábua instalada." },
+  { name: "Sucupira", image: macicoSucupira, desc: "Tom marrom-chocolate intenso com veios marcantes. Alta resistência mecânica e beleza atemporal." },
+  { name: "Tauari", image: macicoTauari, desc: "Tom claro e uniforme, excelente estabilidade dimensional. Ideal para ambientes modernos e minimalistas." },
 ];
 
 const pisosEngenheirados = [
-  { name: "Engenheirado Ipê", image: engIpe, desc: "Lâmina nobre de Ipê sobre base multicamadas, garantindo estabilidade e a beleza clássica da espécie." },
-  { name: "Engenheirado Jatobá", image: engJatoba, desc: "Sofisticação do Jatobá em formato engenheirado, ideal para pisos com aquecimento radiante." },
-  { name: "Engenheirado Cumaru", image: engCumaru, desc: "A nobreza dourada do Cumaru com a praticidade e estabilidade do piso engenheirado." },
-  { name: "Engenheirado Carvalho", image: engCarvalho, desc: "Elegância europeia com tonalidade clara e veios sutis. Versátil para qualquer estilo de decoração." },
-  { name: "Engenheirado Tauari", image: engTauari, desc: "Leveza e modernidade do Tauari em base engenheirada. Perfeito para grandes áreas e ambientes contemporâneos." },
+  { name: "Carvalho Prime Escovado", image: engCarvalhoPrime, desc: "Elegância europeia com textura escovada que realça os veios naturais. Acabamento premium para ambientes contemporâneos." },
+  { name: "Tauari Prime", image: engTauariPrime, desc: "Leveza e sofisticação em base engenheirada de alta estabilidade. Perfeito para grandes áreas e projetos refinados." },
 ];
 
 const projetos = [projeto1, projeto2, projeto3, projeto4, projeto5, projeto6, projeto7, projeto8];
 
-/* ── Carousel Component (same pattern as testimonials) ── */
+/* ── Carousel Component ── */
 interface CarouselSlide {
   name: string;
   image: string;
@@ -104,7 +103,6 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
       </motion.div>
 
       <div className="max-w-2xl mx-auto relative">
-        {/* Arrows */}
         <button
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10"
@@ -120,7 +118,6 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
           <ChevronRight className="w-5 h-5 text-foreground" />
         </button>
 
-        {/* Slide */}
         <motion.div
           key={current}
           custom={direction}
@@ -143,7 +140,6 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
           </div>
         </motion.div>
 
-        {/* Dots */}
         <div className="flex gap-2 justify-center mt-6">
           {items.map((_, i) => (
             <button
@@ -193,20 +189,10 @@ const PisosAssoalhos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top bar */}
-      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex items-center gap-4">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors font-sans text-sm font-medium"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Voltar
-          </Link>
-          <span className="text-muted-foreground">|</span>
-          <h1 className="font-serif text-lg font-bold text-foreground">Pisos & Assoalhos</h1>
-        </div>
-      </div>
+      <Navbar />
+
+      {/* Spacer for fixed navbar */}
+      <div className="h-20" />
 
       {/* Pisos Maciços */}
       <section className="py-14 lg:py-20">
@@ -247,13 +233,16 @@ const PisosAssoalhos = () => {
       <section className="py-14 lg:py-20 bg-card">
         <div className="container mx-auto px-4 text-center">
           <Link
-            to="/"
+            to="/#produtos"
             className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm inline-block"
           >
             VOLTAR AO CATÁLOGO
           </Link>
         </div>
       </section>
+
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
