@@ -52,7 +52,7 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               {[
-                { icon: MapPin, text: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brazil" },
+                { icon: MapPin, text: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brasil" },
                 { icon: Phone, text: "(41) 99999-9999" },
                 { icon: Mail, text: "contato@bmnmadeiras.com.br" },
                 { icon: Instagram, text: "@bmn.madeiras" },
