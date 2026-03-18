@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import pisosImg from "@/assets/product-pisos.jpg";
 import decksImg from "@/assets/product-decks.jpg";
 import forrosImg from "@/assets/product-forros.jpg";
