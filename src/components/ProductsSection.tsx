@@ -21,12 +21,14 @@ const products = [
     description: "Decks em madeiras de alta resistência para áreas externas, piscinas e varandas.",
     image: decksImg,
     alt: "Deck de madeira nobre ao redor de piscina",
+    link: "/decks",
   },
   {
     title: "Forros",
     description: "Forros de madeira que transformam tetos em elementos de design e aconchego.",
     image: forrosImg,
     alt: "Forro de madeira nobre em ambiente moderno",
+    link: "/forros",
   },
   {
     title: "Escadas",
