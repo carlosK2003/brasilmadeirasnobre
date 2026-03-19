@@ -171,7 +171,7 @@ const Marquee = () => {
       >
         {doubled.map((img, i) => (
           <div key={i} className="flex-shrink-0 w-[300px] h-[200px] rounded-sm overflow-hidden">
-            <img src={img} alt={`Projeto ${(i % projetos.length) + 1}`} className="w-full h-full object-cover" />
+            <img src={img} alt={`Projeto ${(i % projetos.length) + 1}`} className="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </motion.div>
