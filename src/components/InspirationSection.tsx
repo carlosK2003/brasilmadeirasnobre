@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import img1 from "@/assets/inspiration-1.jpg";
 import img2 from "@/assets/inspiration-2.jpg";
 import img3 from "@/assets/inspiration-3.jpg";
@@ -68,11 +69,12 @@ const InspirationSection = () => {
           </div>
 
           <div className="flex justify-center mt-12">
-            <button
-              className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm"
+            <Link
+              to="/inspiracoes"
+              className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm inline-block"
             >
               CONHECER INSPIRAÇÕES
-            </button>
+            </Link>
           </div>
         </div>
       </section>
