@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -132,6 +132,7 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
               src={item.image}
               alt={item.name}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="p-6 text-center">
@@ -170,7 +171,7 @@ const Marquee = () => {
       >
         {doubled.map((img, i) => (
           <div key={i} className="flex-shrink-0 w-[300px] h-[200px] rounded-sm overflow-hidden">
-            <img src={img} alt={`Projeto ${(i % projetos.length) + 1}`} className="w-full h-full object-cover" />
+            <img src={img} alt={`Projeto ${(i % projetos.length) + 1}`} className="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </motion.div>
@@ -232,12 +233,12 @@ const PisosAssoalhos = () => {
       {/* CTA */}
       <section className="py-14 lg:py-20 bg-card">
         <div className="container mx-auto px-4 text-center">
-          <Link
-            to="/#produtos"
+          <a
+            href="/#produtos"
             className="px-8 py-4 bg-accent text-accent-foreground font-sans font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300 rounded-sm inline-block"
           >
             VOLTAR AO CATÁLOGO
-          </Link>
+          </a>
         </div>
       </section>
 

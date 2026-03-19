@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -14,6 +15,8 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -23,8 +26,21 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/" + href);
+    }
+  };
+
+  const goHome = () => {
+    setIsOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -37,7 +53,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <button onClick={() => handleClick("#inicio")} className="flex flex-col items-start">
+        <button onClick={goHome} className="flex flex-col items-start">
           <span className="font-serif text-2xl font-bold tracking-wider text-primary">
             BMN
           </span>

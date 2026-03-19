@@ -115,9 +115,14 @@
   }
 }
 
-/* Smooth scrolling */
-html {
+/* Smooth scrolling & prevent horizontal overflow */
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Custom scrollbar */

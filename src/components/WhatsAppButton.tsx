@@ -11,17 +11,17 @@ const WhatsAppButton = () => {
       aria-label="Contato via WhatsApp"
       initial={{ scale: 0 }}
       animate={{
-        scale: [1, 1.05, 1],
+        scale: [1, 1.08, 1],
       }}
       transition={{
         scale: {
-          duration: 2,
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
         },
       }}
     >
-      <img src={whatsappIcon} alt="WhatsApp" className="w-14 h-14 drop-shadow-xl" />
+      <img src={whatsappIcon} alt="WhatsApp" className="w-14 h-14 drop-shadow-xl" loading="lazy" />
     </motion.a>
   );
 };

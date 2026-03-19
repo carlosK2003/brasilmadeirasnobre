@@ -1,8 +1,16 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/" + id);
+    }
   };
 
   return (
@@ -53,7 +61,7 @@ const Footer = () => {
             <div className="space-y-3">
               {[
                 { icon: MapPin, text: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brasil" },
-                { icon: Phone, text: "(41) 99999-9999" },
+                { icon: Phone, text: "(41) 99624-9714" },
                 { icon: Mail, text: "contato@bmnmadeiras.com.br" },
                 { icon: Instagram, text: "@bmn.madeiras" },
               ].map((item) => (
