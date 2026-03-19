@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import img1 from "@/assets/inspiration-1.jpg";
 import img2 from "@/assets/inspiration-2.jpg";
 import img3 from "@/assets/inspiration-3.jpg";
