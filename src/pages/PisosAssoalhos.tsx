@@ -132,6 +132,7 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
               src={item.image}
               alt={item.name}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="p-6 text-center">
