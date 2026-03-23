@@ -31,11 +31,14 @@ const ProductCarousel = ({ items, title }: { items: typeof forroSpecies; title: 
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const [resetKey, setResetKey] = useState(0);
   const next = useCallback(() => { setDirection(1); setCurrent((p) => (p + 1) % items.length); }, [items.length]);
-  const prev = useCallback(() => { setDirection(-1); setCurrent((p) => (p - 1 + items.length) % items.length); }, [items.length]);
-  const goTo = useCallback((i: number) => { setDirection(i > current ? 1 : -1); setCurrent(i); }, [current]);
+  const prevSlide = useCallback(() => { setDirection(-1); setCurrent((p) => (p - 1 + items.length) % items.length); }, [items.length]);
+  const goTo = useCallback((i: number) => { setDirection(i > current ? 1 : -1); setCurrent(i); setResetKey((k) => k + 1); }, [current]);
+  const handleNext = useCallback(() => { next(); setResetKey((k) => k + 1); }, [next]);
+  const handlePrev = useCallback(() => { prevSlide(); setResetKey((k) => k + 1); }, [prevSlide]);
 
-  useEffect(() => { const t = setInterval(next, 5000); return () => clearInterval(t); }, [next]);
+  useEffect(() => { const t = setInterval(next, 5000); return () => clearInterval(t); }, [next, resetKey]);
 
   const item = items[current];
   const variants = {
