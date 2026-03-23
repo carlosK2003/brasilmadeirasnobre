@@ -22,14 +22,13 @@ import c6 from "@/assets/insp-comercial-6.jpg";
 import c7 from "@/assets/insp-comercial-7.jpg";
 import c8 from "@/assets/insp-comercial-8.jpg";
 
-import h1 from "@/assets/insp-hotel-1.jpg";
-import h2 from "@/assets/insp-hotel-2.jpg";
-import h3 from "@/assets/insp-hotel-3.jpg";
-import h4 from "@/assets/insp-hotel-4.jpg";
-import h5 from "@/assets/insp-hotel-5.jpg";
-import h6 from "@/assets/insp-hotel-6.jpg";
-import h7 from "@/assets/insp-hotel-7.jpg";
-import h8 from "@/assets/insp-hotel-8.jpg";
+import h1 from "@/assets/insp-hotel-1.webp";
+import h2 from "@/assets/insp-hotel-2.webp";
+import h3 from "@/assets/insp-hotel-3.webp";
+import h4 from "@/assets/insp-hotel-4.webp";
+import h5 from "@/assets/insp-hotel-5.webp";
+import h6 from "@/assets/insp-hotel-6.webp";
+import h7 from "@/assets/insp-hotel-7.webp";
 
 import p1 from "@/assets/insp-premiado-1.jpg";
 import p2 from "@/assets/insp-premiado-2.jpg";
@@ -43,7 +42,7 @@ import p8 from "@/assets/insp-premiado-8.jpg";
 const sections = [
   { title: "Área Residencial", subtitle: "Ambientes que acolhem com elegância e calor natural.", images: [r1, r2, r3, r4, r5, r6, r7, r8] },
   { title: "Área Comercial", subtitle: "Espaços corporativos que impressionam e inspiram confiança.", images: [c1, c2, c3, c4, c5, c6, c7, c8] },
-  { title: "Hotéis", subtitle: "Hospitalidade elevada pela nobreza da madeira brasileira.", images: [h1, h2, h3, h4, h5, h6, h7, h8] },
+  { title: "Hotéis", subtitle: "Hospitalidade elevada pela nobreza da madeira.", images: [h1, h2, h3, h4, h5, h6, h7] },
   { title: "Ambientes Premiados", subtitle: "Projetos de alto padrão reconhecidos pela excelência em design.", images: [p1, p2, p3, p4, p5, p6, p7, p8] },
 ];
 
@@ -71,15 +70,15 @@ const InspSection = ({ title, subtitle, images, index }: { title: string; subtit
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className={`py-14 lg:py-20 ${index % 2 === 1 ? "bg-card" : "bg-background"}`} ref={ref}>
-      <div className="container mx-auto px-4 lg:px-8 mb-10">
+    <section className={`py-8 lg:py-12 ${index % 2 === 1 ? "bg-card" : "bg-background"}`} ref={ref}>
+      <div className="container mx-auto px-4 lg:px-8 mb-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
+          <div className="w-12 h-[2px] bg-accent mx-auto mb-4" />
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             {title}
           </h2>
@@ -101,7 +100,7 @@ const Inspiracoes = () => {
       <Navbar />
       <div className="h-20" />
 
-      <section className="py-14 lg:py-20" ref={ref}>
+      <section className="py-10 lg:py-14" ref={ref}>
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -114,7 +113,7 @@ const Inspiracoes = () => {
               Inspirações <span className="text-accent italic">BMN</span>
             </h1>
             <p className="text-muted-foreground font-sans max-w-2xl mx-auto">
-              Descubra como a madeira nobre brasileira transforma os mais diversos ambientes em espaços únicos e memoráveis.
+              Descubra como a madeira nobre transforma os mais diversos ambientes em espaços únicos e memoráveis.
             </p>
           </motion.div>
         </div>
@@ -124,7 +123,7 @@ const Inspiracoes = () => {
         <InspSection key={s.title} {...s} index={i} />
       ))}
 
-      <section className="py-14 lg:py-20 bg-card">
+      <section className="py-10 lg:py-14 bg-card">
         <div className="container mx-auto px-4 text-center">
           <a
             href="/#produtos"

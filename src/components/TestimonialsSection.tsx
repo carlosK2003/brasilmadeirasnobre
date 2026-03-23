@@ -25,10 +25,12 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [resetKey, setResetKey] = useState(0);
 
   const goTo = useCallback((index: number) => {
     setDirection(index > current ? 1 : -1);
     setCurrent(index);
+    setResetKey((k) => k + 1);
   }, [current]);
 
   const next = useCallback(() => {
@@ -41,10 +43,13 @@ const TestimonialsSection = () => {
     setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 
+  const handleNext = useCallback(() => { next(); setResetKey((k) => k + 1); }, [next]);
+  const handlePrev = useCallback(() => { prev(); setResetKey((k) => k + 1); }, [prev]);
+
   useEffect(() => {
     const timer = setInterval(next, 4000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, resetKey]);
 
   const t = testimonials[current];
 
@@ -70,23 +75,21 @@ const TestimonialsSection = () => {
         </motion.div>
 
         <div className="max-w-2xl mx-auto relative">
-          {/* Arrows */}
           <button
-            onClick={prev}
+            onClick={handlePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-5 h-5 text-foreground" />
           </button>
           <button
-            onClick={next}
+            onClick={handleNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10"
             aria-label="Próximo"
           >
             <ChevronRight className="w-5 h-5 text-foreground" />
           </button>
 
-          {/* Card */}
           <motion.div
             key={current}
             custom={direction}
@@ -108,7 +111,6 @@ const TestimonialsSection = () => {
             <p className="font-sans text-xs text-muted-foreground mt-1">{t.role}</p>
           </motion.div>
 
-          {/* Dots */}
           <div className="flex gap-2 justify-center mt-8">
             {testimonials.map((_, i) => (
               <button

@@ -14,7 +14,7 @@ const ContactSection = () => {
     const msg = encodeURIComponent(
       `Olá! Meu nome é ${formData.name}. Tenho interesse em ${formData.product}. ${formData.message}`
     );
-    window.open(`https://wa.me/5541999999999?text=${msg}`, "_blank");
+    window.open(`https://wa.me/5541996249714?text=${msg}`, "_blank");
   };
 
   return (
@@ -76,7 +76,7 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-4 py-3 bg-card border border-border rounded-sm font-sans text-sm focus:outline-none focus:border-accent transition-colors"
-                  placeholder="(41) 99999-9999"
+                  placeholder="(41) 99624-9714"
                 />
               </div>
               <div>
@@ -90,6 +90,7 @@ const ContactSection = () => {
                   <option value="Pisos/Assoalhos">Pisos / Assoalhos</option>
                   <option value="Decks">Decks</option>
                   <option value="Forros">Forros</option>
+                  <option value="Escadas">Escadas</option>
                   <option value="Madeiras S4S">Madeiras S4S</option>
                   <option value="Outro">Outro</option>
                 </select>
@@ -121,22 +122,46 @@ const ContactSection = () => {
             className="space-y-8"
           >
             <div className="space-y-6">
-              {[
-                { icon: MapPin, label: "Endereço", value: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brazil" },
-                { icon: Phone, label: "WhatsApp", value: "(41) 99999-9999" },
-                { icon: Mail, label: "E-mail", value: "contato@bmnmadeiras.com.br" },
-                { icon: Instagram, label: "Instagram", value: "@bmn.madeiras" },
-              ].map((item) => (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
-                    <p className="font-sans text-foreground font-medium">{item.value}</p>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-accent" />
                 </div>
-              ))}
+                <div>
+                  <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-1">Endereço</p>
+                  <p className="font-sans text-foreground font-medium">R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brasil</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-1">WhatsApp</p>
+                  <a href="https://wa.me/5541996249714" target="_blank" rel="noopener noreferrer" className="font-sans text-foreground font-medium hover:text-accent transition-colors">
+                    (41) 99624-9714
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-1">E-mail</p>
+                  <p className="font-sans text-foreground font-medium">contato@bmnmadeiras.com.br</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center flex-shrink-0">
+                  <Instagram className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-1">Instagram</p>
+                  <a href="https://www.instagram.com/bmn.madeiras/" target="_blank" rel="noopener noreferrer" className="font-sans text-foreground font-medium hover:text-accent transition-colors">
+                    @bmn.madeiras
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Map */}

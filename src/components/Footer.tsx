@@ -38,7 +38,6 @@ const Footer = () => {
                 { label: "Início", href: "#inicio" },
                 { label: "Sobre Nós", href: "#sobre" },
                 { label: "Produtos", href: "#produtos" },
-                { label: "Segmentações", href: "#segmentacoes" },
                 { label: "Inspiração", href: "#inspiracao" },
                 { label: "Contato", href: "#contato" },
               ].map((link) => (
@@ -59,17 +58,24 @@ const Footer = () => {
               Contato
             </h4>
             <div className="space-y-3">
-              {[
-                { icon: MapPin, text: "R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brasil" },
-                { icon: Phone, text: "(41) 99624-9714" },
-                { icon: Mail, text: "contato@bmnmadeiras.com.br" },
-                { icon: Instagram, text: "@bmn.madeiras" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-3">
-                  <item.icon className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span className="font-sans text-sm text-primary-foreground/70">{item.text}</span>
-                </div>
-              ))}
+              <div className="flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                <span className="font-sans text-sm text-primary-foreground/70">R. Frederico Maurer, 421 - Hauer, Curitiba - PR, 81630-020, Brasil</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+                <a href="https://wa.me/5541996249714" target="_blank" rel="noopener noreferrer" className="font-sans text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+                  (41) 99624-9714
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-accent flex-shrink-0" />
+                <span className="font-sans text-sm text-primary-foreground/70">contato@bmnmadeiras.com.br</span>
+              </div>
+              <a href="https://www.instagram.com/bmn.madeiras/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent transition-colors">
+                <Instagram className="w-4 h-4 text-accent flex-shrink-0" />
+                <span className="font-sans text-sm text-primary-foreground/70 hover:text-accent transition-colors">@bmn.madeiras</span>
+              </a>
             </div>
           </div>
         </div>
@@ -81,7 +87,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-4">
             <a
-              href="https://instagram.com/bmn.madeiras"
+              href="https://www.instagram.com/bmn.madeiras/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
