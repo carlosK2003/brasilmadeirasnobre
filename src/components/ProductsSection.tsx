@@ -15,6 +15,7 @@ const products = [
     image: pisosImg,
     alt: "Piso de madeira nobre brasileira",
     link: "/pisos-e-assoalhos",
+    cta: "Ver detalhes",
   },
   {
     title: "Decks",
@@ -22,6 +23,7 @@ const products = [
     image: decksImg,
     alt: "Deck de madeira nobre ao redor de piscina",
     link: "/decks",
+    cta: "Ver detalhes",
   },
   {
     title: "Forros",
@@ -29,18 +31,23 @@ const products = [
     image: forrosImg,
     alt: "Forro de madeira nobre em ambiente moderno",
     link: "/forros",
+    cta: "Ver detalhes",
   },
   {
     title: "Escadas",
     description: "Escadas em madeiras nobres com acabamento impecável, unindo segurança, durabilidade e elegância aos seus ambientes.",
     image: escadasImg,
     alt: "Escada de madeira nobre com design moderno",
+    link: "/escadas",
+    cta: "Ver detalhes",
   },
   {
     title: "Madeiras S4S",
     description: "Peças aplainadas nos quatro lados, prontas para projetos sob medida e marcenaria.",
     image: s4sImg,
     alt: "Madeira S4S aplainada premium",
+    link: "/#contato",
+    cta: "Conferir Disponibilidade",
   },
 ];
 
@@ -70,8 +77,9 @@ const ProductsSection = () => {
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {products.map((product, i) => {
-            const Wrapper = product.link ? Link : 'div';
-            const wrapperProps = product.link ? { to: product.link } : {};
+            const isExternal = product.link.startsWith("/#");
+            const Wrapper = isExternal ? 'a' : Link;
+            const wrapperProps = isExternal ? { href: product.link } : { to: product.link };
             return (
               <motion.div
                 key={product.title}
@@ -93,7 +101,7 @@ const ProductsSection = () => {
                     <h3 className="font-serif text-2xl font-bold text-cream mb-2">{product.title}</h3>
                     <p className="font-sans text-sm text-cream/80 mb-4 max-w-sm">{product.description}</p>
                     <span className="inline-flex items-center gap-2 text-accent text-sm font-sans font-medium uppercase tracking-wider group-hover:gap-3 transition-all duration-300">
-                      Ver detalhes <ArrowRight className="w-4 h-4" />
+                      {product.cta} <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
                 </Wrapper>

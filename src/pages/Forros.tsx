@@ -31,11 +31,14 @@ const ProductCarousel = ({ items, title }: { items: typeof forroSpecies; title: 
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const [resetKey, setResetKey] = useState(0);
   const next = useCallback(() => { setDirection(1); setCurrent((p) => (p + 1) % items.length); }, [items.length]);
-  const prev = useCallback(() => { setDirection(-1); setCurrent((p) => (p - 1 + items.length) % items.length); }, [items.length]);
-  const goTo = useCallback((i: number) => { setDirection(i > current ? 1 : -1); setCurrent(i); }, [current]);
+  const prevSlide = useCallback(() => { setDirection(-1); setCurrent((p) => (p - 1 + items.length) % items.length); }, [items.length]);
+  const goTo = useCallback((i: number) => { setDirection(i > current ? 1 : -1); setCurrent(i); setResetKey((k) => k + 1); }, [current]);
+  const handleNext = useCallback(() => { next(); setResetKey((k) => k + 1); }, [next]);
+  const handlePrev = useCallback(() => { prevSlide(); setResetKey((k) => k + 1); }, [prevSlide]);
 
-  useEffect(() => { const t = setInterval(next, 5000); return () => clearInterval(t); }, [next]);
+  useEffect(() => { const t = setInterval(next, 5000); return () => clearInterval(t); }, [next, resetKey]);
 
   const item = items[current];
   const variants = {
@@ -52,10 +55,10 @@ const ProductCarousel = ({ items, title }: { items: typeof forroSpecies; title: 
       </motion.div>
 
       <div className="max-w-2xl mx-auto relative">
-        <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10" aria-label="Anterior">
+        <button onClick={handlePrev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10" aria-label="Anterior">
           <ChevronLeft className="w-5 h-5 text-foreground" />
         </button>
-        <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10" aria-label="Próximo">
+        <button onClick={handleNext} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10" aria-label="Próximo">
           <ChevronRight className="w-5 h-5 text-foreground" />
         </button>
 

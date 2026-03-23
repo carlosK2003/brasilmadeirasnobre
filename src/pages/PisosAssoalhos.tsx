@@ -57,12 +57,14 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const [resetKey, setResetKey] = useState(0);
+
   const next = useCallback(() => {
     setDirection(1);
     setCurrent((prev) => (prev + 1) % items.length);
   }, [items.length]);
 
-  const prev = useCallback(() => {
+  const prevSlide = useCallback(() => {
     setDirection(-1);
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
   }, [items.length]);
@@ -71,14 +73,18 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
     (index: number) => {
       setDirection(index > current ? 1 : -1);
       setCurrent(index);
+      setResetKey((k) => k + 1);
     },
     [current]
   );
 
+  const handleNext = useCallback(() => { next(); setResetKey((k) => k + 1); }, [next]);
+  const handlePrev = useCallback(() => { prevSlide(); setResetKey((k) => k + 1); }, [prevSlide]);
+
   useEffect(() => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [next, resetKey]);
 
   const item = items[current];
 
@@ -104,14 +110,14 @@ const ProductCarousel = ({ items, title }: { items: CarouselSlide[]; title: stri
 
       <div className="max-w-2xl mx-auto relative">
         <button
-          onClick={prev}
+          onClick={handlePrev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10"
           aria-label="Anterior"
         >
           <ChevronLeft className="w-5 h-5 text-foreground" />
         </button>
         <button
-          onClick={next}
+          onClick={handleNext}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:border-accent transition-colors z-10"
           aria-label="Próximo"
         >
